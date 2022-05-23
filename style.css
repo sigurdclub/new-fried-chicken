@@ -1,0 +1,73 @@
+
+/* footer */
+
+/* menu pesan */
+.table-pesanan th,
+.table-pesanan td
+{
+    color: black;
+}
+
+/* menu products */
+
+.table-products th,
+.table-products td
+{
+    color: black;
+}
+
+.form-products input{
+    background-color: black;
+}
+
+/* dashboard css */
+.nav-text a p{
+    color: black;
+}
+.nav-text a i{
+    color: black;
+}
+.side-text h4{
+    color: rgb(0, 0, 0);
+}
+.side-text h4:hover{
+    color: rgb(61, 61, 61);
+}
+
+
+/* css products */
+.btn-product{
+    background-color: #F2BB7B;
+}
+.btn-product:hover{
+    background-color: #ee9b3bcc;
+}
+.btn-product{
+    color: black;
+}
+.btn-product:hover{
+    color: rgb(53, 52, 52);
+}
+
+.form-products button{
+    color: black;
+    background-color: #ee9b3bcc ;
+}
+.form-products button:hover{
+    background-color: #ffa844 ;
+}
+
+/* navbar guests */
+@font-face {
+    font-family: way;
+    src: url(assets/font/);
+
+}
+
+
+
+
+
+
+
+
