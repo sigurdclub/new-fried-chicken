@@ -17,13 +17,13 @@ if(isset($_POST["update"])){
   if(updateAyam($_POST)>0){
     echo "
       <script>
-          alert('data berhasil ditambah!');
+          alert('data berhasil diubah!');
           document.location.href = 'products.php';
       </script>";
   }else{
     echo "
       <script>
-          alert('data gagal ditambah!');
+          alert('data gagal diubah!');
           document.location.href = 'products.php';
       </script>";
   }
@@ -165,7 +165,7 @@ if(isset($_POST["update"])){
             <div class="card-body">
             <form class="row g-3 form-products" action="" method="POST" enctype="multipart/form-data">
               <div class="col-12">
-                <input type="hidden" class="form-control" id="inputAddress" placeholder="Apple..." name="id"style="background-color: white; color: black;" >
+                <input type="hidden" class="form-control" id="inputAddress" placeholder="Apple..." name="id"style="background-color: white; color: black;" value="<?php echo $id ?>">
               </div>
               <div class="col-12">
                 <label for="inputAddress" class="form-label" style="color: black;">Nama Ayam</label>

@@ -68,8 +68,8 @@ function updateAyam($data){
     move_uploaded_file($tmp_file, $folder);
   }
   $query="UPDATE ayam SET nama_ayam='$ayam', stok='$stok', harga='$harga', size='$size', gambar='$nama_file_baru' 
-                            WHERE id=$id ";
-  
+                            WHERE id='$id' ";
+  // var_dump($query);die();
   mysqli_query($conn,$query) or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
