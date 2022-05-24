@@ -1,7 +1,7 @@
-    <!-- <?php
-        // include_once "../function.php";
+    <?php
+        include_once "../function.php";
 
-    ?> -->
+    ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -164,25 +164,30 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Tanggal</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Nama Baju</th>
-                            <th scope="col">Jumlah (lembar)</th>
-                            <th scope="col">Alamat</th>
+                            <th scope="col">Nama Pembeli</th>
+                            <th scope="col">Nama Ayam</th>
+                            <th scope="col">Jumlah</th>
+                            <th scope="col">Size</th>
                             <th scope="col">Total Harga</th>
                         </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                                $data = mysqli_query($conn,"SELECT * FROM orderan_ayam ORDER BY id DESC");
+                                $i=1;
+                            ?>
+                            <?php foreach ($data as $row) : ?>
                                 <tr>
-                                    <td scope="row"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td scope="row"><?= $i++;?> </td>
+                                    <td><?= $row['tanggal'];?></td>
+                                    <td><?= $row['nama_pembeli'];?></td>
+                                    <td><?=$row['nama_ayam'];?></td>
+                                    <td><?=$row['jumlah'];?></td>
+                                    <td><?=$row['size'];?></td>
+                                    <td><?=$row['total_harga'];?></td>
                                     
                                 </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

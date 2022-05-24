@@ -1,7 +1,7 @@
 <?php
     include_once '../../function.php';
     $harga=$_GET["harga"];
-    $buah=$_GET["buah"];
+    $ayam=$_GET["ayam"];
     if(isset($_POST["pesan"]) ){
         
         if(pesan($_POST) >0 ){
@@ -66,20 +66,20 @@
                     <form class="row g-3" method="POST">
                         
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Nama Pemesan</label>
-                            <input type="text" name="nama_pemesan" class="form-control" id="inputAddress" placeholder="">
+                            <label for="inputAddress" class="form-label">Nama Pembeli</label>
+                            <input type="text" name="nama_pembeli" class="form-control" id="inputAddress" placeholder="">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Nama Pesanan</label>
-                            <input type="text" name="nama_pesanan" class="form-control" id="inputAddress" placeholder="" value="<?= $_GET["buah"]; ?>">
+                            <label for="inputAddress" class="form-label">Nama Ayam</label>
+                            <input type="text" name="nama_pesanan" class="form-control" id="inputAddress" placeholder="" value="<?= $_GET["ayam"]; ?>">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Jumlah Pesanan (Kg)</label>
+                            <label for="inputAddress" class="form-label">Jumlah Pesanan</label>
                             <input type="number" name="jumlah_pesanan" class="form-control" id="inputAddress" placeholder="">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Alamat</label>
-                            <input type="text" name="alamat" class="form-control" id="inputAddress" placeholder="">
+                            <label for="inputAddress" class="form-label">Size</label>
+                            <input type="text" name="size" class="form-control" id="inputAddress" placeholder="">
                         </div>                        
                         </div>
                         <div class="col-12" style="display: flex;justify-content: end; ">

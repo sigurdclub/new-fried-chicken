@@ -1,8 +1,8 @@
-    <!-- <?php
-        // include_once "../function.php";
-        // $i=1;
-        // $data=query("SELECT * FROM tb_produkbaju");
-    ?> -->
+    <?php
+        include_once "../function.php";
+        $i=1;
+        $data=query("SELECT * FROM ayam");
+    ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -145,10 +145,10 @@
                         <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Nama Baju</th>
-                            <th scope="col">Size</th>
-                            <th scope="col"> Harga</th>
+                            <th scope="col">Nama Ayam</th>
                             <th scope="col">Stok</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Harga</th>
                             <th scope="col">Gambar</th>
                             <th scope="col">Aksi</th>
                             
@@ -160,10 +160,10 @@
 
                                 <tr>
                                     <td scope="row"><?=$i++?> </td>
-                                    <td><?=$row["nama_baju"];?></td>
+                                    <td><?=$row["nama_ayam"];?></td>
+                                    <td><?=$row["stok"];?></td>
                                     <td><?=$row["size"];?></td>
                                     <td><?=$row["harga"];?></td>
-                                    <td><?=$row["stok"];?></td>
                                     <td><img src="../img/<?= $row ['gambar'];?>" alt="" width="100px"></td>
                                     <td>
                                     <a href="hapus.php?id=<?=$row["id"];?>">

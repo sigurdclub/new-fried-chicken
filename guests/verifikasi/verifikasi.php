@@ -56,31 +56,31 @@ if(isset($_POST["submit"])){
                 <div>
                     <form class="row g-3" method="POST">
                         <?php
-                            $data=query("SELECT * FROM tb_pesanan");
+                            $data=query("SELECT * FROM orderan_ayam");
                             foreach ($data as $row) {
-                                $row["nama"];
-                                $row["nama_buah"];
+                                $row["nama_pembeli"];
+                                $row["nama_ayam"];
                                 $row["jumlah"];
-                                $row["alamat"];
+                                $row["size"];
                                 $row["total_harga"];
                             }
                         ?>
                         
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["nama"]?>">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["nama_pembeli"]?>">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Nama Pesanan</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["nama_buah"]?>">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["nama_ayam"]?>">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Jumlah Pesanan</label>
                             <input type="number" class="form-control" id="inputAddress" placeholder=""  value="<?=$row["jumlah"]?>">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["alamat"]?>">
+                            <label for="inputAddress" class="form-label">Size</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["size"]?>">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Total Harga</label>

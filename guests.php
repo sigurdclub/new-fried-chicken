@@ -1,5 +1,5 @@
 <?php
-    // include_once "function.php";
+    include_once "function.php";
 
 ?>
 <!DOCTYPE html>
@@ -56,17 +56,23 @@
         <!-- container content -->
         <div class="container-fluid">
             <div class="row" style="justify-content: space-around; margin-top: 2%; ;">
+
+            <?php
+                $data = mysqli_query($conn,"SELECT * FROM ayam");
+            ?>
+            <?php foreach ($data as $row) : ?>
                     
                     <div class="card shadow" style="width: 18rem; border-radius: 12px; background-color: beige;" >
-                        <a href="./guests/pesanan/pesanan.php" style="color: black;">
-                            <div class="card-body;">
-                                <img class="img-guests rounded mx-auto d-block" style="padding: 12px; "  src="./assets/images/imgbin_hamburger-fried-chicken-fast-food-french-fries-png.png" alt="" height="350pc">
-                            <h3 class="card-title" style="font-weight: bold;">Dada</h3>
-                            <h5 class="card-text">Rp.25000</h5>
-                            <p style="font-style: italic; color: rgba(0, 0, 0, 0.623);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <a href="./guests/pesanan/pesanan.php?harga=<?= $row["harga"] ; ?>&ayam=<?=$row["nama_ayam"];?> " style="color: black;">
+                            <img style="padding: 12px;" src="./img/<?= $row ["gambar"];?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h3 class="card-title" style="font-weight: bold;"><?=$row["nama_ayam"]?></h3>
+                            <h5 class="card-text">Rp. <?=$row["harga"]?> </h5>
                             </div>
+
                         </a>
                     </div>
+            <?php endforeach ?>
             </div>
         </div>
     </div>

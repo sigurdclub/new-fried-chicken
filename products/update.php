@@ -1,21 +1,33 @@
 <?php
-// include_once "../function.php";
+include_once "../function.php";
 
-// if(isset($_POST["tambah"])){
-//   if(tambahproduct($_POST)){
-//     echo "
-//       <script>
-//           alert('data berhasil ditambah!');
-//           document.location.href = 'products.php';
-//       </script>";
-//   }else{
-//     echo "
-//       <script>
-//           alert('data gagal ditambah!');
-//           document.location.href = 'products.php';
-//       </script>";
-//   }
-// }
+$id = $_GET["id"];
+
+$data=query("SELECT * FROM ayam WHERE id='$id' ");
+  // var_dump($data);die;
+  foreach($data as $row){
+      $ayam= $row["nama_ayam"];
+      $stok=$row["stok"];
+      $size=$row["size"];  
+      $harga=$row["harga"];
+      $gambar=$row["gambar"];  
+  }
+
+if(isset($_POST["update"])){
+  if(updateAyam($_POST)>0){
+    echo "
+      <script>
+          alert('data berhasil ditambah!');
+          document.location.href = 'products.php';
+      </script>";
+  }else{
+    echo "
+      <script>
+          alert('data gagal ditambah!');
+          document.location.href = 'products.php';
+      </script>";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,27 +165,30 @@
             <div class="card-body">
             <form class="row g-3 form-products" action="" method="POST" enctype="multipart/form-data">
               <div class="col-12">
-                <label for="inputAddress" class="form-label" style="color: black;">Nama Baju</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Apple..." name="nama_baju"style="background-color: white; color: black;" >
+                <input type="hidden" class="form-control" id="inputAddress" placeholder="Apple..." name="id"style="background-color: white; color: black;" >
+              </div>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: black;">Nama Ayam</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Apple..." name="nama_ayam"style="background-color: white; color: black;" value="<?php echo $ayam ?>">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;">Size</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="size" style="background-color: white; color: black;">
+                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="size" style="background-color: white; color: black;" value="<?php echo $size ?>">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;">Harga</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="15000" name="harga" style="background-color: white; color: black;">
+                <input type="text" class="form-control" id="inputAddress2" placeholder="15000" name="harga" style="background-color: white; color: black;" value="<?php echo $harga ?>">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;">Stok</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="2" name="stok" style="background-color: white; color: black;">
+                <input type="text" class="form-control" id="inputAddress2" placeholder="2" name="stok" style="background-color: white; color: black;" value="<?php echo $stok ?>">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;">Gambar</label>
                 <input type="file" class="form-control" id="inputAddress2" placeholder="" name="gambar" style="background-color: white; color: black;">
               </div>
               <div class="col-12" style="display: flex; justify-content: right;">
-              <button type="submit" class="btn btn-tambah" >Update</button>
+              <button type="submit" class="btn btn-tambah" name="update" >Update</button>
               </div>
             </form>
             </div>

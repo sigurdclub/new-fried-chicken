@@ -1,21 +1,21 @@
 <?php
-// include_once "../function.php";
+include_once "../function.php";
 
-// if(isset($_POST["tambah"])){
-//   if(tambahproduct($_POST)){
-//     echo "
-//       <script>
-//           alert('data berhasil ditambah!');
-//           document.location.href = 'products.php';
-//       </script>";
-//   }else{
-//     echo "
-//       <script>
-//           alert('data gagal ditambah!');
-//           document.location.href = 'products.php';
-//       </script>";
-//   }
-// }
+if(isset($_POST["tambah"])){
+  if(tambahAyam($_POST)){
+    echo "
+      <script>
+          alert('data berhasil ditambah!');
+          document.location.href = 'products.php';
+      </script>";
+  }else{
+    echo "
+      <script>
+          alert('data gagal ditambah!');
+          document.location.href = 'products.php';
+      </script>";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,27 +153,27 @@
             <div class="card-body">
             <form class="row g-3 form-products" action="" method="POST" enctype="multipart/form-data">
               <div class="col-12">
-                <label for="inputAddress" class="form-label" style="color: black;">Nama Baju</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Apple..." name="nama_baju"style="background-color: white; color: black;" >
+                <label for="inputAddress" class="form-label" style="color: black;">Nama Ayam</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Apple..." name="nama_ayam"style="background-color: white; color: black;" >
               </div>
               <div class="col-12">
-                <label for="inputAddress2" class="form-label" style="color: black;">Size</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="size" style="background-color: white; color: black;">
+                <label for="inputAddress2" class="form-label" style="color: black;">Stok</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="stok" style="background-color: white; color: black;">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;">Harga</label>
                 <input type="text" class="form-control" id="inputAddress2" placeholder="15000" name="harga" style="background-color: white; color: black;">
               </div>
               <div class="col-12">
-                <label for="inputAddress2" class="form-label" style="color: black;">Stok</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="2" name="stok" style="background-color: white; color: black;">
+                <label for="inputAddress2" class="form-label" style="color: black;">Size</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="size" style="background-color: white; color: black;">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;">Gambar</label>
                 <input type="file" class="form-control" id="inputAddress2" placeholder="" name="gambar" style="background-color: white; color: black;">
               </div>
               <div class="col-12" style="display: flex; justify-content: right;">
-              <button type="submit" class="btn btn-tambah" >Tambah</button>
+              <button type="submit" class="btn btn-tambah" name="tambah" >Tambah</button>
               </div>
             </form>
             </div>
